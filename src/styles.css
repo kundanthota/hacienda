@@ -302,7 +302,7 @@ footer { padding: 72px clamp(24px, 7vw, 110px) 25px; color: #fff; background: #1
   .home-hero-content > p:not(.eyebrow) { margin: 24px 0 28px; font-size: 13px; line-height: 1.65; }
   .hero-actions { align-items: flex-start; flex-direction: column; gap: 13px; }
   .hero-award { margin-top: 20px; }
-  .hero-note { right: 22px; bottom: 82px; min-width: 205px; }
+  .hero-note { display: none; }
   .hero-scroll { right: auto; bottom: 25px; left: 22px; transform: none; }
   .hero-index { display: none; }
   .home-intro { grid-template-columns: 1fr; gap: 32px; }
