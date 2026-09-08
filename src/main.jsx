@@ -13,6 +13,8 @@ const copy = {
     heroText: 'Lively Mexican cooking, American favorites and legendary cocktails — served with a whole lot of heart.',
     reserve: 'Reserve a table', seeMenu: 'View our menu',
     scrollDiscover: 'Scroll to discover',
+    awardKicker: 'Reader-voted · Stars and Stripes', awardTitle: 'Voted Best Mexican Restaurant.',
+    awardText: 'Hacienda Mexican Restaurant was named a Best of Germany 2024 winner in the Rhein Main region.',
     menuKicker: 'Made for sharing', menuTitle: 'The Hacienda menu', menuIntro: 'Explore our guest favorites right here — no PDF and no leaving the website.',
     menuNote: 'Prices include VAT. Please ask our team about allergens and dietary requirements.',
     callLine: 'For reservations and to-go orders feel free to give us a call',
@@ -47,6 +49,8 @@ const copy = {
     heroText: 'Lebendige mexikanische Küche, amerikanische Klassiker und legendäre Cocktails — mit ganz viel Herz serviert.',
     reserve: 'Tisch reservieren', seeMenu: 'Speisekarte ansehen',
     scrollDiscover: 'Nach unten entdecken',
+    awardKicker: 'Von Lesern gewählt · Stars and Stripes', awardTitle: 'Zum besten mexikanischen Restaurant gewählt.',
+    awardText: 'Hacienda Mexican Restaurant wurde als „Best of Germany 2024“-Gewinner in der Region Rhein Main ausgezeichnet.',
     menuKicker: 'Zum Teilen gemacht', menuTitle: 'Die Hacienda Speisekarte', menuIntro: 'Entdecken Sie unsere beliebtesten Gerichte direkt hier — ohne PDF und ohne die Website zu verlassen.',
     menuNote: 'Alle Preise inklusive MwSt. Informationen zu Allergenen erhalten Sie bei unserem Team.',
     callLine: 'Für Reservierungen und Bestellungen zum Mitnehmen rufen Sie uns gerne an',
@@ -323,6 +327,7 @@ function HomePage({ t, isOpen }) {
         <h1>{t.welcome}.<br /><em>{langLine(t, 'Stay for the fiesta.', 'Bleib für die Fiesta.')}</em></h1>
         <p>{t.numberOne}. {t.heroText}</p>
         <div className="hero-actions"><a className="button button-gold" href="tel:+4963156986">{t.reserve}<ArrowRight size={17} /></a><a className="text-link light" href="#/menu">{t.seeMenu}<ArrowRight size={17} /></a></div>
+        <div className="hero-award"><span><Star size={15} fill="currentColor" /></span><div><small>STARS &amp; STRIPES</small><strong>BEST OF GERMANY 2024</strong></div></div>
       </div>
       <div className="hero-note"><span className={isOpen ? '' : 'closed'}><Sparkles size={17} /></span><div><strong>{isOpen ? t.todayOpen : t.todayClosed}</strong><small>0631 56986</small></div></div>
       <button className="hero-scroll" type="button" onClick={() => document.getElementById('home-intro')?.scrollIntoView({ behavior: 'smooth' })} aria-label={t.scrollDiscover}><span>{t.scrollDiscover}</span><ArrowDown size={16} /></button>
@@ -334,6 +339,8 @@ function HomePage({ t, isOpen }) {
       <div className="intro-lead"><div className="kicker"><span /> Hacienda Kaiserslautern</div><h2>{langLine(t, 'Come hungry. Leave happy.', 'Komm hungrig. Geh glücklich.')}</h2></div>
       <div className="intro-copy"><p>{t.aboutParas[0]}</p><a className="text-link" href="#/about">{t.nav[2]}<ArrowRight size={17} /></a></div>
     </section>
+
+    <section className="home-award page-pad" id="home-award"><figure className="award-certificate"><img src={`${A}best-of-germany-2024.png`} alt="Best of Germany 2024 winner certificate for Hacienda Mexican Restaurant" loading="lazy" /></figure><div className="award-copy"><div className="kicker"><span /> {t.awardKicker}</div><span className="award-year">2024</span><h2>{t.awardTitle}</h2><p>{t.awardText}</p><div className="award-seal"><Star size={18} fill="currentColor" /><span>BEST OF GERMANY<br /><strong>RHEIN MAIN</strong></span></div></div></section>
 
     <section className="experience page-pad">
       <div className="section-head"><div><span>{t.weekly}</span><h2>{langLine(t, 'A reason to celebrate, every week.', 'Jede Woche ein Grund zum Feiern.')}</h2></div><p>{t.weeklySub}</p></div>
